@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "4b78d3e6e95880b8",
+    "type": "split",
+    "children": [
+      {
+        "id": "ca7ea61f0ff8a478",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b6793fadd6515ed9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "网络/UDP编程.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d0d384d4c504bbc9",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "bb28536cc2b5a079",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "31a386ffc0e2862e",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "1dd79f446e43eda5",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "2a9c244d9a09b860",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "541741f77aa63293",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "121fa78d6d7f6e9e",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "网络/UDP编程.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "80575ffcf2401895",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "网络/UDP编程.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "6b34ee7d69ab4b57",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "网络/UDP编程.md"
+          }
+        }
+      }
+    ]
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "remotely-save:Remotely Save": false
+    }
+  },
+  "active": "b6793fadd6515ed9",
+  "lastOpenFiles": [
+    "网络/计算机网络概述.md",
+    "网络/UDP编程.md",
+    "算法笔记/图论/最近公共祖先.md",
+    "Pasted image 20240515221002.png",
+    "Pasted image 20240515220539.png",
+    "图床/Pasted image 20240514161636.png",
+    "算法笔记/算法/质因数分解.md",
+    "算法笔记/数据结构/单调队列.md",
+    "算法笔记/数学/求分数.md",
+    "图床/Pasted image 20240513134036.png",
+    "图床/Pasted image 20240513134549.png",
+    "图床/Pasted image 20240513172737.png",
+    "图床/Pasted image 20240513133712.png",
+    "图床/Pasted image 20240513172226.png",
+    "图床/Pasted image 20240513172314.png",
+    "图床/Pasted image 20240513171934.png",
+    "网络",
+    "算法笔记/数据结构/单调栈.md",
+    "算法笔记/数据结构/莫队.md",
+    "算法笔记/数据结构/左偏树.md",
+    "算法笔记/数据结构/并查集.md",
+    "算法笔记/数据结构/线段树.md",
+    "C++/STL.md",
+    "算法笔记/图论/最小生成树.md",
+    "算法笔记/图论/最短路.md",
+    "算法笔记/数据结构/线段树分裂合并.md",
+    "算法笔记/图论/树链剖分.md",
+    "算法笔记/算法/最大连续子序列和.md",
+    "算法笔记/动态规划/线性DP.md",
+    "未命名.md",
+    "算法笔记/动态规划/背包.md",
+    "杂物间/牲口.md",
+    "读书笔记/仓库/间客.md",
+    "读书笔记/书架.md",
+    "读书笔记/dataview.md",
+    "读书笔记/仓库/毛泽东自述.md",
+    "读书笔记/仓库/围城.md",
+    "读书笔记/仓库",
+    "杂物间",
+    "读书笔记",
+    "论文",
+    "C++",
+    "Excalidraw",
+    "小说/早梦",
+    "小说/字句",
+    "小说/境界"
+  ]
+}

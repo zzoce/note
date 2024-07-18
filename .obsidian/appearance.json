@@ -1,0 +1,11 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "cssTheme": "Blue Topaz",
+  "baseFontSize": 21,
+  "baseFontSizeAction": true,
+  "translucency": false,
+  "enabledCssSnippets": [
+    "Components-Unofficial-StyleSetting"
+  ]
+}

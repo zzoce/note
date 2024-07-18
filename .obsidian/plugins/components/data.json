@@ -1,0 +1,223 @@
+{
+  "widgets": [],
+  "components": [
+    {
+      "id": "8f814372-8cc7-47c6-9f28-a81b05befc85",
+      "type": "dataview",
+      "titleAlign": "center",
+      "tabTitle": "图书检索",
+      "maxWidthRatio": -1,
+      "createAt": "2024-04-26T12:41:48.918Z",
+      "updateAt": "2024-04-26T12:51:35.442Z",
+      "query": "const dateFormat = \"YYYY-MM-DD\"\nconst headers = [\"author\",\"readingDate\"]\nlet pageNum = 1\nconst pageSize = {{PageSize}}\nconst pageTitleLike = \"{{FileName}}\"\nconst authorLike = \"{{Author}}\"\nconst tagLike = \"{{TagA}}\"\nconst titleMatch = (page, title) => {\n    return title ? page.file.name?.toLowerCase().includes(title.toLowerCase()) : true;\n}\nconst authorMatch = (page, author) => {// page[\"author\"]中的author替换为自己的作者属性\n\treturn author&&page[\"author\"] ? new RegExp(`.*${author}.*`, 'i').test(String(page[\"author\"])) : false;\n}\nconst tagMatch = (page, tag) => {\n\treturn tag ? page.file.tags && page.file.tags.some(t => t.includes(tag)) : true;\n}\nconst filteredData = dv.pages(`\"读书笔记/仓库\"`) //替换为你需要的查询位置\n    .where(p => {\n        if (pageTitleLike && !authorLike && !tagLike) {\n            return titleMatch(p, pageTitleLike)\n        } else if (!pageTitleLike && authorLike && !tagLike) {\n            return authorMatch(p, authorLike)\n        } else if (!pageTitleLike && !authorLike && tagLike) {\n            return tagMatch(p, tagLike)\n        } else if (pageTitleLike && authorLike && !tagLike) {\n            return titleMatch(p, pageTitleLike) && authorMatch(p, authorLike)\n        }\n         else if (pageTitleLike && !authorLike && tagLike) {\n            return titleMatch(p, pageTitleLike) && tagMatch(p, tagLike)\n        }\n         else if (!pageTitleLike && authorLike && tagLike) {\n            return authorMatch(p, authorLike) && tagMatch(p, tagLike)\n        }\n         else if (pageTitleLike && authorLike && tagLike) {\n            return titleMatch(p, pageTitleLike) && authorMatch(p, authorLike) && tagMatch(p, tagLike)\n        }else{\n\t        return true\n        }\n    })\n    .sort(p => {{SortFiled}},\"{{Sort}}\")\n    .map(p => {\n        return [p.file.link, ...headers.map(property => p[property]), moment(Number(p.file.ctime)).format(dateFormat)]\n    })\nfunction formatDate(date) {\n    const mdate = new Date(date);\n    return `${mdate.getFullYear()}-${String(mdate.getMonth() + 1).padStart(2, '0')}-${String(mdate.getDate()).padStart(2, '0')}`;\n}\nconst totalData = filteredData.length;\nconst maxnum = Math.ceil(totalData / pageSize);\n\nlet flexContainer = createFlexContainer(\"space-between\");\n\nlet paragraph = dv.el(\"span\", \"检索出 \" + totalData + \" 条数据\");\nparagraph.style.flex = \"1\";\nflexContainer.appendChild(paragraph);\n\nlet parentContainer = createFlexContainer(\"flex-end\");\nlet [button1, button2, pageSpan1, pageSpan2, pageSpan3] = createPaginationElements();\nparentContainer.append(button1, pageSpan1, pageSpan2, pageSpan3, button2);\nflexContainer.appendChild(parentContainer);\n\nfunction createPaginationElements() {\n    let button1 = dv.el(\"button\", \"上一页\");\n    button1.onclick = () => {\n        pageNum = pageNum > 1 ? pageNum - 1 : maxnum;\n        fy();\n    };\n    let pageSpan1 = dv.el(\"span\", pageNum);\n    let pageSpan2 = dv.el(\"span\", \" / \");\n    let pageSpan3 = dv.el(\"span\", maxnum);\n    let button2 = dv.el(\"button\", \"下一页\");\n    button2.onclick = () => {\n        pageNum = pageNum < maxnum ? pageNum + 1 : 1;\n        fy();\n    };\n    return [button1, button2, pageSpan1, pageSpan2, pageSpan3];\n}\nfunction createFlexContainer(justifyContent) {\n    let container = dv.el(\"div\", \"\");\n    container.style.display = \"flex\";\n    container.style.alignItems = \"center\";\n    container.style.justifyContent = justifyContent;\n    return container;\n}\n\nlet table = dv.el(\"div\", \"\")\nfunction fy() {\n  if(document.querySelector(\".dataview.table-view-table\")){\n    document.querySelector(\".dataview.table-view-table\").remove();\n  }\n  let pageData = filteredData.slice((pageNum - 1) * pageSize, pageNum * pageSize);\n  dv.table([\"FileName\", ...headers, \"CreatedDate\"], pageData, \".dataview.table-view-table\");\n  pageSpan1.innerText = pageNum;\n}\nfy();",
+      "queryType": "dataviewjs",
+      "backgroundStyle": "card",
+      "maxHeight": 300,
+      "dynamicParamComponents": [
+        {
+          "id": "9d017eb4-664d-4032-a0bd-42401c2372e7",
+          "type": "text",
+          "name": "FileName",
+          "defaultValue": "",
+          "placeholder": "",
+          "fromProperty": "",
+          "label": "文件名"
+        },
+        {
+          "id": "a3b36dc2-191a-4dea-88f4-ea8698f24be0",
+          "type": "propertyValueSuggestions",
+          "name": "Author",
+          "defaultValue": "",
+          "placeholder": "",
+          "fromProperty": "author",
+          "label": "作者"
+        },
+        {
+          "id": "2258e61a-4079-4c71-bc12-a06e4e97c0bf",
+          "type": "tagSuggestions",
+          "name": "TagA",
+          "defaultValue": "",
+          "placeholder": "",
+          "fromProperty": "",
+          "label": "标签"
+        },
+        {
+          "id": "be34c1d8-4e57-463b-9d96-afbe3af0b004",
+          "type": "number",
+          "name": "PageSize",
+          "defaultValue": "999999999",
+          "placeholder": "",
+          "fromProperty": "",
+          "label": "数量控制"
+        },
+        {
+          "id": "334da7c0-2adf-4e24-99ea-d6b479d5ce74",
+          "type": "select",
+          "name": "SortFiled",
+          "defaultValue": "p.file.name",
+          "placeholder": "",
+          "fromProperty": "",
+          "label": "筛选",
+          "options": [
+            {
+              "id": "9176d64e-1b3e-40e4-8d10-03bede34514e",
+              "label": "文件名",
+              "value": "p.file.name"
+            },
+            {
+              "id": "fbb7759e-7b81-4c6e-a725-7a1ef685ac45",
+              "label": "创建时间",
+              "value": "p.file.ctime"
+            }
+          ]
+        },
+        {
+          "id": "58ed5c99-b354-4127-8caa-593cba9ecce1",
+          "type": "select",
+          "name": "asc",
+          "defaultValue": "",
+          "placeholder": "",
+          "fromProperty": "",
+          "label": "Sort",
+          "options": [
+            {
+              "id": "49b75abf-6c63-4545-a1b1-ad9ffa6d9644",
+              "label": "升序",
+              "value": "asc"
+            },
+            {
+              "id": "5e47de79-72ae-415d-9571-4ff5b228ea02",
+              "label": "降序",
+              "value": "desc"
+            }
+          ]
+        }
+      ],
+      "title": "超级检索器\n"
+    },
+    {
+      "id": "1f577d60-7c4a-4089-9b41-3875fe5516fc",
+      "type": "dynamicDataView",
+      "titleAlign": "center",
+      "tabTitle": "王dada的书架",
+      "maxWidthRatio": -1,
+      "createAt": "2024-04-26T12:10:51.099Z",
+      "updateAt": "2024-04-26T12:30:37.615Z",
+      "backgroundStyle": "none",
+      "viewType": "gallary",
+      "datasource": {
+        "filter": {
+          "conditions": [
+            {
+              "value": "读书笔记/仓库",
+              "operator": "contains",
+              "property": "${file.path}",
+              "id": "4db20cfa-bfb3-4b96-8fb7-471703b6848c"
+            }
+          ]
+        },
+        "dataLimit": 999999999999,
+        "storage": {
+          "location": ""
+        },
+        "sort": {
+          "orders": [
+            {
+              "id": "8a553891-808c-4b0c-90fd-1b06e1b2d942",
+              "property": "${file.basename}",
+              "direction": "asc"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "id": "90d4db23-e873-4d06-95ac-3c8eae228984",
+          "name": "author",
+          "isShow": true,
+          "defaultValue": "",
+          "type": "select"
+        },
+        {
+          "id": "82cf89a1-e03e-4e12-ba43-21fa4ea8408e",
+          "name": "finishedDate",
+          "isShow": true,
+          "defaultValue": "",
+          "type": "datetime"
+        },
+        {
+          "id": "c81bf448-30b2-4f11-85ff-9987c69d2156",
+          "name": "noteCount",
+          "isShow": true,
+          "defaultValue": 0,
+          "type": "number",
+          "options": {
+            "prefix": "笔记",
+            "suffix": "条",
+            "color": "components--color-theme",
+            "uiType": "number",
+            "total": 100
+          }
+        },
+        {
+          "id": "01b99b56-0113-4fdf-8f7e-9ceef3d9971d",
+          "name": "progress",
+          "isShow": true,
+          "defaultValue": 0,
+          "type": "number",
+          "options": {
+            "prefix": "",
+            "suffix": "",
+            "color": "components--color-theme",
+            "uiType": "progressBar",
+            "total": 100
+          }
+        }
+      ],
+      "templates": [],
+      "viewOptions": {
+        "openPageIn": "tab",
+        "itemSize": "gallary-small",
+        "cover": {
+          "type": "pageProperty",
+          "value": "cover",
+          "fit": "contains"
+        }
+      }
+    },
+    {
+      "id": "bab3b644-f3e9-4dc6-9398-ffa5470de752",
+      "type": "multi",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "createAt": "2024-04-26T12:10:42.537Z",
+      "updateAt": "2024-04-26T12:29:49.886Z",
+      "backgroundStyle": "none",
+      "widgets": [],
+      "components": [
+        {
+          "componentId": "1f577d60-7c4a-4089-9b41-3875fe5516fc"
+        }
+      ],
+      "layoutType": "tab"
+    },
+    {
+      "id": "17bba0e0-c4d6-40cb-90dc-6696d2c72c41",
+      "type": "multi",
+      "titleAlign": "center",
+      "tabTitle": "",
+      "maxWidthRatio": -1,
+      "createAt": "2024-04-26T12:41:33.407Z",
+      "updateAt": "2024-04-26T12:42:05.607Z",
+      "backgroundStyle": "none",
+      "widgets": [],
+      "components": [
+        {
+          "componentId": "8f814372-8cc7-47c6-9f28-a81b05befc85"
+        }
+      ],
+      "layoutType": "tab"
+    }
+  ]
+}

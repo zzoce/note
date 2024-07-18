@@ -1,0 +1,239 @@
+{
+  "main": {
+    "id": "59b914812162c6cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "47b5cfa48ac46c02",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b7f4d1ed27e6e148",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "算法笔记/数学/最大公约数与最小公倍数.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e30ee855e0668197",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "网络/UDP编程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "86e23d2ff6cebac4",
+    "type": "split",
+    "children": [
+      {
+        "id": "13c0a484e885fd3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d7a454dca42b239a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "477b49320b46bdd6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "单调栈",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4dd64322ee0608ce",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 268.5
+  },
+  "right": {
+    "id": "fd3e4a77e84e89c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "f34df0cf25a2ec60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "10934c43eead132c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "网络/UDP编程.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4d5dc67ee52b64aa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "网络/UDP编程.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a4f87c36cea5a927",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "237c6daa4ab61ed8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "网络/UDP编程.md"
+              }
+            }
+          },
+          {
+            "id": "c96ac117d1453c47",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "e2fb4ac7bdf6207c",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "obsidian-focus-mode:Toggle Focus Mode (Shift + Click to show active pane only)": false,
+      "obsidian42-brat:BRAT": false,
+      "obsidian-weread-plugin:同步微信读书笔记": false,
+      "templater-obsidian:Templater": false,
+      "media-extended:Open media": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "remotely-save:Remotely Save": false,
+      "notion-like-tables:Create loom": false
+    }
+  },
+  "active": "e30ee855e0668197",
+  "lastOpenFiles": [
+    "网络/计算机网络概述.md",
+    "网络/UDP编程.md",
+    "Pasted image 20240513172737.png",
+    "Pasted image 20240513172314.png",
+    "Pasted image 20240513172226.png",
+    "Pasted image 20240513171934.png",
+    "Pasted image 20240513171340.png",
+    "Pasted image 20240513170506.png",
+    "Pasted image 20240513170040.png",
+    "未命名.md",
+    "Pasted image 20240513144001.png",
+    "Pasted image 20240513143956.png",
+    "Pasted image 20240513135854.png",
+    "算法笔记/图论/链式前向星.md",
+    "未命名 1.md",
+    "未命名 2.md",
+    "网络",
+    "算法笔记/数据结构/单调栈.md",
+    "算法笔记/数据结构/单调队列.md",
+    "算法笔记/算法/两种以O(n)复杂度求素数个数的方法.md",
+    "算法笔记/数学/求分数.md",
+    "算法笔记/数学/最大公约数与最小公倍数.md",
+    "QT",
+    "算法笔记/图论/最短路.md",
+    "算法笔记/图论/字典树.md",
+    "算法笔记/算法/二分.md",
+    "算法笔记/数据结构/线段树.md",
+    "算法笔记/数据结构/左偏树.md",
+    "算法笔记/数据结构/莫队.md",
+    "算法笔记/数据结构/并查集.md",
+    "算法笔记/动态规划/线性DP.md",
+    "算法笔记/动态规划/树形DP.md",
+    "算法笔记/图论/有向无环图.md",
+    "算法笔记/图论/最近公共祖先.md",
+    "算法笔记/图论/最小生成树.md",
+    "算法笔记/动态规划/区间DP.md",
+    "算法笔记/动态规划/背包.md",
+    "算法笔记/算法/最大连续子序列和.md",
+    "算法笔记/数据机构",
+    "计算机网络",
+    "杂物间",
+    "未命名.canvas",
+    "未命名 1",
+    "读书笔记/仓库",
+    "读书笔记/未分类",
+    "读书笔记/政治军事",
+    "读书笔记/未分类/精品小说"
+  ]
+}
